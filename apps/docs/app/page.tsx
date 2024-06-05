@@ -1,9 +1,19 @@
+"use client"
 import { Button } from "@repo/ui/button";
 import Image from "next/image";
+import { authOptions } from "../lib/auth";
+import { useSession } from "next-auth/react";
+
 
 export default function Home() {
+  const session =  useSession();
+
+  
+
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+
+      {JSON.stringify(session)}
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
